@@ -1,12 +1,12 @@
 server:
-  port: 8761 # Porta padrão do Eureka Server
+  port: 8761
 
 eureka:
   client:
-    register-with-eureka: false # O servidor não se registra nele mesmo
-    fetch-registry: false       # O servidor não busca o registro de outros servidores
+    register-with-eureka: false
+    fetch-registry: false
   server:
-    enable-self-preservation: true # Ativa o mecanismo de autopreservação do Eureka (opcional)
+    enable-self-preservation: true
   instance:
     preferIpAddress: true
     statusPageUrl: http://${eureka.instance.hostname}:${server.port}/actuator/info
@@ -23,6 +23,6 @@ management:
       show-details: always
   health:
     eureka:
-      enabled: true # Habilita verificação de saúde para o Eureka
+      enabled: true
   info:
-    enabled: true # Habilita o endpoint /info
+    enabled: true
