@@ -56,7 +56,7 @@ jobs:
 
     # Salvar relatório da análise
     - name: Upload CodeQL SARIF results
-      uses: actions/upload-artifact@v3
+      uses: actions/upload-artifact@v4  # Atualização para v4
       with:
         name: codeql-analysis-results
         path: ./.github/codeql-results/ # Modifique conforme a pasta onde os resultados são gerados
