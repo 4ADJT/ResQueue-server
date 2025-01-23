@@ -54,9 +54,13 @@ jobs:
       with:
         category: "/language:${{matrix.language}}"
 
+    # Listar arquivos no diretório de resultados do CodeQL
+    - name: List files in codeql-results directory
+      run: ls -R ./codeql-results/ # Verifica se os resultados estão sendo gerados
+
     # Salvar relatório da análise
     - name: Upload CodeQL SARIF results
       uses: actions/upload-artifact@v4  # Atualização para v4
       with:
         name: codeql-analysis-results
-        path: ./.github/codeql-results/ # Modifique conforme a pasta onde os resultados são gerados
+        path: ./codeql-results/ # Ajuste o caminho conforme necessário
