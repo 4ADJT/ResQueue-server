@@ -55,12 +55,12 @@ jobs:
         category: "/language:${{matrix.language}}"
 
     # Listar arquivos no diretório de resultados do CodeQL
-    - name: List files in codeql-results directory
-      run: ls -R ./codeql-results/ # Verifica se os resultados estão sendo gerados
+    - name: List files in CodeQL results directory
+      run: ls -R /home/runner/work/ResQueue-server/results/ # Verifica se os resultados estão sendo gerados
 
     # Salvar relatório da análise
     - name: Upload CodeQL SARIF results
-      uses: actions/upload-artifact@v4  # Atualização para v4
+      uses: actions/upload-artifact@v4
       with:
         name: codeql-analysis-results
-        path: ./codeql-results/ # Ajuste o caminho conforme necessário
+        path: /home/runner/work/ResQueue-server/results/ # Caminho correto dos arquivos SARIF
