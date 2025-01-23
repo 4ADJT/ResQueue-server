@@ -24,8 +24,8 @@ jobs:
           port: 22
           script: |
             echo "${{ secrets.DOCKERHUB_TOKEN }}" | docker login -u "${{ secrets.DOCKERHUB_USERNAME }}" --password-stdin
-            docker pull ${{ secrets.DOCKERHUB_REPOSITORY }}:latest
             docker stop eureka_server || true
             docker rm eureka_server || true
             docker rmi ${{ secrets.DOCKERHUB_REPOSITORY }}:latest || true
+            docker pull ${{ secrets.DOCKERHUB_REPOSITORY }}:latest
             docker run -d --network host --name eureka_server ${{ secrets.DOCKERHUB_REPOSITORY }}:latest
