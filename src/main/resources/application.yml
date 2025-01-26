@@ -7,11 +7,6 @@ eureka:
     fetch-registry: false
   server:
     enable-self-preservation: true
-  instance:
-    preferIpAddress: true
-    statusPageUrl: http://${eureka.instance.hostname}:${server.port}/actuator/info
-    healthCheckUrl: http://${eureka.instance.hostname}:${server.port}/actuator/health
-    homePageUrl: http://${eureka.instance.hostname}:${server.port}/
 
 management:
   endpoints:
@@ -21,8 +16,3 @@ management:
   endpoint:
     health:
       show-details: always
-  health:
-    eureka:
-      enabled: true
-  info:
-    enabled: true
