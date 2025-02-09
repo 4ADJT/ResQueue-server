@@ -31,4 +31,5 @@ jobs:
             docker run -d --network host --name eureka_server \
               -e SPRING_PROFILES_ACTIVE=prod \
               -e eureka.environment=prod \
+              -e EUREKA_URL=${{ secrets.EUREKA_URL }} \
               ${{ secrets.DOCKERHUB_REPOSITORY }}:latest

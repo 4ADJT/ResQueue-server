@@ -3,7 +3,7 @@ server:
 
 eureka:
   instance:
-    hostname: eureka.imaginer.com.br
+    hostname: ${EUREKA_URL:-localhost}
   client:
     register-with-eureka: false
     fetch-registry: true
