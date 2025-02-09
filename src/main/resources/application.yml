@@ -2,8 +2,6 @@ server:
   port: 8761
 
 eureka:
-  instance:
-    hostname: ${EUREKA_URL:-localhost}
   client:
     register-with-eureka: false
     fetch-registry: true
