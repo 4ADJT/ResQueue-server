@@ -51,19 +51,6 @@ docker pull rodrigobrocchi/resqueue-server:latest
 docker run -p 8761:8761 rodrigobrocchi/resqueue-server:latest
 ```
 
-Se quiser construir sua própria imagem Docker:
-```dockerfile
-FROM eclipse-temurin:21-jdk
-WORKDIR /app
-COPY target/resqueue-server.jar app.jar
-ENTRYPOINT ["java", "-jar", "app.jar"]
-```
-E execute:
-```sh
-docker build -t resqueue-server .
-docker run -p 8761:8761 resqueue-server
-```
-
 ---
 
 ## 🖥️ **Acessando o Eureka Dashboard**
